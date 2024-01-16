@@ -14,7 +14,7 @@ definitions:
       name: Run benchmark tests
       script: sh benchmark.sh
 workflows:
-  ios-mac-pro-workflow:
+  ios-m1-mac-mini-workflow:
     name: iOS M1 Mac Mini Workflow
     instance_type: mac_mini_m1
     environment:
@@ -23,8 +23,8 @@ workflows:
       <<: *push_event
     scripts:
       - *runBenchmarkTests
-  ios-m1-mac-mini-workflow:
-    name: iOS M1 Mac Mini Workflow
+  ios-m2-mac-mini-workflow:
+    name: iOS M2 Mac Mini Workflow
     instance_type: mac_mini_m2
     environment:
       <<: *env_versions
