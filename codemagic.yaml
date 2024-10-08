@@ -16,7 +16,7 @@ definitions:
 workflows:
   ios-m1-mac-mini-workflow:
     name: iOS M1 Mac Mini Workflow
-    instance_type: mac_mini_m1
+    # instance_type: mac_mini_m1
     environment:
       <<: *env_versions
     triggering:
@@ -25,7 +25,7 @@ workflows:
       - *runBenchmarkTests
   ios-m2-mac-mini-workflow:
     name: iOS M2 Mac Mini Workflow
-    instance_type: mac_mini_m2
+    # instance_type: mac_mini_m2
     environment:
       <<: *env_versions
     triggering:
