@@ -25,7 +25,7 @@ workflows:
       - *runBenchmarkTests
   ios-m2-mac-mini-workflow:
     name: iOS M2 Mac Mini Workflow
-    # instance_type: mac_mini_m2
+    instance_type: mac_mini_m2
     environment:
       <<: *env_versions
     triggering:
