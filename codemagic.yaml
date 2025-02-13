@@ -39,7 +39,6 @@ workflows:
     triggering:
       <<: *push_event
     scripts:
-      - *machineSpecs
       - *runBenchmarkTests
   ios-m4-pro-mac-mini-workflow:
     name: iOS M4 Pro Mac mini Workflow
@@ -48,7 +47,6 @@ workflows:
     triggering:
       <<: *push_event
     scripts:
-      - *machineSpecs
       - *runBenchmarkTests
   ios-m2-max-studio-workflow:
     name: iOS M2 Max Studio Workflow
@@ -57,5 +55,4 @@ workflows:
     triggering:
       <<: *push_event
     scripts:
-      - *machineSpecs
       - *runBenchmarkTests
