@@ -24,4 +24,4 @@ meta:
 app:
   envs:
     - key: XCODE_VERSION
-      value: "16.4"
+        value: "16.4"
