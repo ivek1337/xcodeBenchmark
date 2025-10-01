@@ -7,9 +7,9 @@ project_type: ios
 workflows:
   ios-m2-xcode-benchmark:
     description: |
-      Runs benchmark tests on Mac mini with Xcode 16.4.
+      Runs benchmark tests on Mac mini with Xcode 16.4
     steps:
-    - git-clone@8:{}
+    - git-clone@8: {}
     - script@1.1.5:
         title: Run benchmark tests
         inputs:
