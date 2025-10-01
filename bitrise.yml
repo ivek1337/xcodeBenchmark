@@ -1,4 +1,4 @@
-format_version: '13'
+format_version: '23'
 
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 
@@ -6,16 +6,18 @@ app:
   envs:
     - XCODE_VERSION: "16.4"
 
-pipelines:
+trigger_map:
+  - push_branch: "benchmark"
+    workflow: ios-m2-mac-mini-workflow
+
+workflows:
   ios-m2-mac-mini-workflow:
-    trigger_map:
-      - push_branch: "master"
     steps:
       - git-clone@12: {}
       - script@1:
           title: Run benchmark tests
           inputs:
-            - content: |-
-                #!/bin/bash
-                set -ex
-                sh benchmark.sh
+            content: |-
+              #!/bin/bash
+              set -ex
+              sh benchmark.sh
