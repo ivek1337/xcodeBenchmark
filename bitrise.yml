@@ -23,5 +23,4 @@ meta:
     machine_type_id: g2.mac.large
 app:
   envs:
-    - key: XCODE_VERSION
-        value: "16.4"
+    - key: XCODE_VERSION: 16.4
