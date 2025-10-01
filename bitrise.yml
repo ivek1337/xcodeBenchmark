@@ -15,7 +15,7 @@ workflows:
     trigger_map:
       - push_branch: "benchmark"
     steps:
-      - git-clone@12: {}
+      - git-clone: {}
       - script@1.1.5:
           title: Run benchmark tests
           inputs:
