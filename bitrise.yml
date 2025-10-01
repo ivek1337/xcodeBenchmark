@@ -21,6 +21,4 @@ meta:
   bitrise.io:
     stack: osx-xcode-16.4.x
     machine_type_id: g2.mac.large
-app:
-  envs:
-    - key: XCODE_VERSION: 16.4
+
