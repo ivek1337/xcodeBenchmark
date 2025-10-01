@@ -1,0 +1,24 @@
+version: 2.1
+
+executors:
+  mac_mini_m2:
+    macos:
+      xcode: "16.4"
+
+jobs:
+  run_benchmark_tests:
+    executor: mac_mini_m2
+    steps:
+      - checkout
+      - run:
+          name: Run benchmark tests
+          command: sh benchmark.sh
+
+workflows:
+  ios_m2_mac_mini_workflow:
+    jobs:
+      - run_benchmark_tests:
+          filters:
+            branches:
+              only:
+                - master
