@@ -12,15 +12,13 @@ jobs:
   ios_m2_mac_mini:
     name: iOS M2 Mac mini Job
     runs-on: macos-latest
-    env:
-      XCODE: ${{ env.XCODE_VERSION }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up Xcode
         run: |
-          sudo xcode-select -s /Applications/Xcode_${{ env.XCODE }}.app
+          sudo xcode-select -s /Applications/Xcode_${XCODE_VERSION}.app
           echo "Using Xcode version:"
           xcodebuild -version
 
