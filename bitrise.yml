@@ -11,7 +11,6 @@ workflows:
     steps:
     - git-clone@8: {}
     - script@1.1.5:
-        title: Run benchmark tests
         inputs:
           content: |-
             #!/bin/bash
