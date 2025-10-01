@@ -1,5 +1,5 @@
 ---
-format_version: 11
+format_version: '23'
 
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 
@@ -10,12 +10,19 @@ app:
     - key: XCODE_VERSION
       value: "16.4"
 
+meta:
+  bitrise.io:
+    stack: osx-xcode-16.4.x
+    machine_type_id: g2.mac.large
+
 workflows:
   ios-m2-mac-mini-workflow:
+    description: |
+      Runs benchmark tests on Mac mini with Xcode 16.4.
     trigger_map:
       - push_branch: "benchmark"
     steps:
-      - git-clone: {}
+      - git-clone@7: {}
       - script@1.1.5:
           title: Run benchmark tests
           inputs:
@@ -23,3 +30,4 @@ workflows:
               #!/bin/bash
               set -ex
               sh benchmark.sh
+
