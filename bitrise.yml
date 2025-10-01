@@ -13,10 +13,10 @@ workflows:
     - script@1.1.5:
         title: Run_benchmark_test
         inputs:
-          content: |-
-            #!/bin/bash
-            set -ex
-            sh benchmark.sh
+          - content: |-
+              #!/bin/bash
+              set -ex
+              sh benchmark.sh
 meta:
   bitrise.io:
     stack: osx-xcode-16.4.x
