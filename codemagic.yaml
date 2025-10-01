@@ -1,6 +1,6 @@
 definitions:
   env_versions: &env_versions
-    xcode: 15.4
+    xcode: 16.4
   triggering:
     push: &push_event
       events:
@@ -14,15 +14,7 @@ definitions:
       name: Run benchmark tests
       script: sh benchmark.sh
 workflows:
-  ios-m1-mac-mini-workflow:
-    name: iOS M1 Mac mini Workflow
-    # instance_type: mac_mini_m1
-    environment:
-      <<: *env_versions
-    triggering:
-      <<: *push_event
-    scripts:
-      - *runBenchmarkTests
+
   ios-m2-mac-mini-workflow:
     name: iOS M2 Mac mini Workflow
     instance_type: mac_mini_m2
@@ -32,6 +24,17 @@ workflows:
       <<: *push_event
     scripts:
       - *runBenchmarkTests
+      
+  ios-m1-mac-mini-workflow:
+    name: iOS M1 Mac mini Workflow
+    # instance_type: mac_mini_m1
+    environment:
+      <<: *env_versions
+    triggering:
+      <<: *push_event
+    scripts:
+      - *runBenchmarkTests
+      
   ios-m4-mac-mini-workflow:
     name: iOS M4 Mac mini Workflow
     environment:
@@ -40,6 +43,7 @@ workflows:
       <<: *push_event
     scripts:
       - *runBenchmarkTests
+      
   ios-m4-pro-mac-mini-workflow:
     name: iOS M4 Pro Mac mini Workflow
     environment:
@@ -48,6 +52,7 @@ workflows:
       <<: *push_event
     scripts:
       - *runBenchmarkTests
+      
   ios-m4-max-studio-workflow:
     name: iOS M4 Max Studio Workflow
     environment:
