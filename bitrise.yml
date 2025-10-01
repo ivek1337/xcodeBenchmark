@@ -11,6 +11,7 @@ workflows:
     steps:
     - git-clone@8: {}
     - script@1.1.5:
+        title: Run_benchmark_test
         inputs:
           content: |-
             #!/bin/bash
