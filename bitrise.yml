@@ -7,7 +7,8 @@ project_type: ios
 
 app:
   envs:
-    - XCODE_VERSION: "16.4"
+    - key: XCODE_VERSION
+      value: "16.4"
 
 workflows:
   ios-m2-mac-mini-workflow:
@@ -22,4 +23,3 @@ workflows:
               #!/bin/bash
               set -ex
               sh benchmark.sh
-
